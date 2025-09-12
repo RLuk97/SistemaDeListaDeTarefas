@@ -1,9 +1,329 @@
-.bi-info-square:hover{
-  cursor: pointer;
-  color: #0d6efd;
+/* Importar Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset e configurações globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.bi-search{
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  min-height: 100vh;
+  color: #333;
+  overflow: hidden;
+}
+
+/* Container principal */
+.p-4 {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+/* Header styling */
+.d-flex h3 {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Input de pesquisa */
+.input-group {
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.input-group:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.input-group-text {
+  background: linear-gradient(45deg, #34495e, #2c3e50);
+  border: none;
+  color: white;
+}
+
+.form-control {
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border: none;
+  background: #f8f9ff;
+}
+
+/* Tabela */
+.table {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  display: block;
+  height: 80vh;
+  max-height: 900px;
+}
+
+.table thead {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table tbody {
+  display: block;
+  height: calc(80vh - 100px);
+  max-height: 800px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.table tbody::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+.table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table thead {
+  background: linear-gradient(45deg, #34495e, #2c3e50);
+  color: white;
+}
+
+.table thead th {
+  border: none;
+  padding: 20px 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.table tbody tr:hover {
+  background: linear-gradient(45deg, rgba(52, 73, 94, 0.1), rgba(44, 62, 80, 0.1));
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table tbody td {
+  border: none;
+  padding: 20px 15px;
+  vertical-align: middle;
+  font-weight: 500;
+  text-align: center;
+}
+
+.table tbody th {
+  border: none;
+  padding: 20px 15px;
+  font-weight: 600;
+  color: #34495e;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Checkbox customizado */
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #34495e;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.form-check-input:checked {
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+  border-color: #27ae60;
+  box-shadow: 0 0 10px rgba(39, 174, 96, 0.5);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(52, 73, 94, 0.25);
+}
+
+/* Ícones */
+.bi-info-square {
+  font-size: 24px;
+  color: #34495e;
+  transition: all 0.3s ease;
+}
+
+.bi-info-square:hover {
+  cursor: pointer;
+  color: #27ae60;
+  transform: scale(1.2) rotate(5deg);
+  text-shadow: 0 0 10px rgba(39, 174, 96, 0.5);
+}
+
+.bi-search {
   width: 24px;
   height: 24px;
+}
+
+.bi-arrow-left {
+  font-size: 28px;
+  color: #34495e;
+  transition: all 0.3s ease;
+}
+
+.bi-arrow-left:hover {
+  color: #27ae60;
+  transform: translateX(-5px);
+}
+
+/* Página de detalhes */
+.container {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.container h1 {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.container p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Header da página de detalhes */
+.fs-3 {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table tbody tr {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.table tbody tr:nth-child(even) {
+  animation-delay: 0.1s;
+}
+
+.table tbody tr:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .p-4 {
+    margin: 10px;
+    border-radius: 15px;
+  }
+  
+  .d-flex {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .w-25 {
+    width: 100% !important;
+  }
+  
+  .d-flex h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .table {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .container h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Efeitos especiais */
+.table tbody tr:hover td {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Gradiente animado para o fundo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #2c3e50, #34495e, #3498db, #2980b9, #27ae60, #2ecc71);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

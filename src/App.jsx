@@ -6,16 +6,16 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 
 function App() {
 	const [filter, setFilter] = useState('')
-	const [invoicesArr, setInvoicesArr] = useState([])
+	const [tasksArr, setTasksArr] = useState([])
   const navigate = useNavigate()
 
 	useEffect(() => {
-		axios.get('https://jsonplaceholder.typicode.com/todos').then((res) => setInvoicesArr(res.data))
+		axios.get('https://jsonplaceholder.typicode.com/todos').then((res) => setTasksArr(res.data))
 		// .then(() => console.log(invoicesArr))
 	}, [])
 
 	const handleCheck = (el, id) => {
-		setInvoicesArr((prev) =>
+		setTasksArr((prev) =>
 			prev.map((e) => {
 				return id === e.id ? { ...e, completed: el.checked } : e
 			})
@@ -25,8 +25,8 @@ function App() {
 	return (
     <div className='p-4'>
       <Routes>
-        <Route path='/' element={<Table filter={filter} setFilter={setFilter} invoicesArr={invoicesArr} handleCheck={handleCheck} />} />
-        <Route path="/task/:taskId" element={<Details invoicesArr={invoicesArr} />} />
+        <Route path='/' element={<Table filter={filter} setFilter={setFilter} tasksArr={tasksArr} handleCheck={handleCheck} />} />
+        <Route path="/task/:taskId" element={<Details tasksArr={tasksArr} />} />
       </Routes>
     </div>
 	)

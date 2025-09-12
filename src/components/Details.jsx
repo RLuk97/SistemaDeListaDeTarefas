@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Details = ({invoicesArr}) => {
+const Details = ({tasksArr}) => {
     const {taskId} = useParams()
-    const task = invoicesArr.find(task => task.id === parseInt(taskId))
+    const task = tasksArr.find(task => task.id === parseInt(taskId))
 
     if (!task){
         return (

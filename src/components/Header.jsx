@@ -1,7 +1,7 @@
 const Header = ({filter, setFilter}) => {
     return (
         <div className="d-flex align-items-center justify-content-between">
-        <h3>Listagem de notas fiscais</h3>
+        <h3>Lista de Tarefas</h3>
         <div className="input-group w-25">
           <span className="input-group-text d-flex align-items-center px-2">
             <i className="bi bi-search"></i>

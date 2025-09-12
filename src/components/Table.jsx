@@ -1,7 +1,7 @@
 import Todo from "./Todo";
 import Header from './Header'
 
-const Table = ({filter, invoicesArr, handleCheck, setFilter}) => {
+const Table = ({filter, tasksArr, handleCheck, setFilter}) => {
     return (
         <>
             <Header filter={filter} setFilter={setFilter} />
@@ -15,7 +15,7 @@ const Table = ({filter, invoicesArr, handleCheck, setFilter}) => {
                 </tr>
             </thead>
             <tbody>
-                {invoicesArr.map((e, i) => (
+                {tasksArr.map((e, i) => (
                 filter ? e.title.includes(filter) && <Todo key={i} id={e.id} title={e.title} isCompleted={e.completed} handleCheck={handleCheck} /> : <Todo key={i} id={e.id} title={e.title} isCompleted={e.completed} handleCheck={handleCheck} />
                 ))}
             </tbody>
